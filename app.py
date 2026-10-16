@@ -125,6 +125,8 @@ class StreamlitStockPredictor:
         
         if model_type == 'random_forest':
             self.model = RandomForestRegressor(n_estimators=100, random_state=42)
+        else  if model_type == 'gradientboosting':
+            self.model = GradientBoostingRegressor(n_estimators=100)
         else:
             self.model = LinearRegression()
         
@@ -163,7 +165,7 @@ def main():
     # Stock selection
     symbol = st.sidebar.text_input("Stock Symbol", value="AAPL", help="Enter a valid stock ticker (e.g., AAPL, GOOGL, TSLA)")
     period = st.sidebar.selectbox("Data Period", ["1y", "2y", "5y", "max"], index=1)
-    model_type = st.sidebar.selectbox("Model Type", ["random_forest", "linear_regression"])
+    model_type = st.sidebar.selectbox("Model Type", ["random_forest", "linear_regression", "gradientboosting"])
     
     # Initialize predictor
     predictor = StreamlitStockPredictor()
