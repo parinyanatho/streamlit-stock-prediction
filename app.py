@@ -125,7 +125,7 @@ class StreamlitStockPredictor:
         
         if model_type == 'random_forest':
             self.model = RandomForestRegressor(n_estimators=100, random_state=42)
-        else if model_type == 'gradientboosting':
+        elif model_type == 'gradientboosting':
             self.model = GradientBoostingRegressor(n_estimators=100)
         else:
             self.model = LinearRegression()
