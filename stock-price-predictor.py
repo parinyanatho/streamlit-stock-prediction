@@ -1,7 +1,6 @@
 """
 Stock Price Predictor - AI/ML
 A comprehensive machine learning application for predicting stock prices
-Author: Veeru Patel
 """
 
 import pandas as pd
